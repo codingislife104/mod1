@@ -1,0 +1,67 @@
+/*********************************************************************
+* File                  : Pseudocode.txt
+* Author Name           : CHAMUNDESWARI
+* Desc                  : Pseudocode to accept one positive Integer and One digit. 
+                          Write a procedure to find number of occurrance of the digit 
+                          in that number,if the digit is not present it should throw Exception. 
+                          Make use of best practices and exception handling.
+* Version               : 1.0
+* Last Modified Date    : 10-Jan-2018
+*********************************************************************/
+
+BEGIN
+
+    DECLARE digit               AS INTEGER
+    DECLARE positiveNumber      AS INTEGER
+    DECLARE noOfOccurence   AS INTEGER
+    
+    PROMPT "Enter Positive Integer" AND STORE IN positiveNumber
+    PROMPT "Enter a Digit" AND STORE IN digit
+    
+    noOfOccurence   =   getOccurence( positiveNumber , digit );
+
+        EXCEPTION 
+
+            WHEN Occur_NotFound THEN
+
+                PRINT "Digit is not present in given Number"
+            
+END
+
+/*********************************************************************
+* Module Name       : getOccurence()
+* Input Parameters  : positiveNumber , digit
+* Return Type       : INTEGER
+* Author            : CHAMUNDESWARI
+* Creation Date     : 10-Jan-2018
+* Description       : Apply discount on the product price
+*********************************************************************/
+
+SUB getOccurence( positiveNumber , digit )
+
+    DECLARE Occur AS INETGER
+    
+      WHILE ( positiveNumber != NULL)
+
+        DO
+            separateDigit    =   positiveNumber % 10;
+            positiveNumber   =   positiveNumber /10;
+ 
+            IF separateDigit == digit THEN
+                Occur        =  Occur + 1;
+            END IF
+
+      END WHILE
+    
+            IF  occur       ==  NULL THEN
+
+                 RAISE OccurNotFound("Digit not exists")
+
+            ELSE
+ 
+                 RETURN occur
+
+            END IF
+    
+END SUB
+
