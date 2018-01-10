@@ -1,0 +1,64 @@
+
+
+/*Javascript for validation of Consumer electricity form.*/
+
+function validate(){
+    
+        var win         = window.open();
+        var unit        = frm1.txtunit.value;
+        var ConsumerName    = frm1.txtname.value;
+        var ConsumerNumber  = frm1.txtnumber.value;
+        var Email       = frm1.txtemail.value;
+        
+        var TotalCharge = getTotalCharge(unit);
+        
+        alert("\nConsumer No:       " + ConsumerNumber +
+                "\nConsumer Name:       "+ ConsumerName +
+                    "\nConsumer Email:      " + Email +
+                        "\n# of Units:      " + unit+
+                            "\nCharge/Unit:     " + TotalCharge)
+    
+}
+
+function getTotalCharge(unit){
+        
+        if ( unit>=0 && unit<=100 ){
+                var charge  = 2.80;
+            }
+            
+        else if( unit>=101 && unit<=200 ){
+                var charge  = 3.90;
+            }
+            
+        else{
+            var charge = 4.50;
+            }
+        
+        return charge;
+}
+
+/*CSS for Consumer Electricity form.*/
+
+table{
+    border-style:double;
+    background-color:lightblue; 
+}
+h1{
+    color:red;
+    text-transform: capitalize;
+    text-align: center;
+}
+th{
+    text-align:left
+}
+
+
+
+
+
+
+
+
+
+
+

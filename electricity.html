@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+  <html>
+    <body>
+        <title> Consumer Electricity Information </title>
+
+        <link href="electricty.css" rel="stylesheet" type="text/css"/>
+           <script src="validate.js">
+           </script>
+    
+         <form name="frm1" onsubmit="return validate()">
+
+               <table align="center">
+
+               <h1> Electricity Consumer Form </h1>
+           
+               
+               <tr>
+                 <th>Consumer No:</th>
+                    <td>
+                       <input type="text" name="consumernumber" autofocus required  
+                        pattern="[0-9]{10}"  maxlength=10/>
+                                            
+                    </td>
+               </tr>
+
+     
+               <tr>
+                  <th>Consumer Name:</th>
+                     <td>
+                         <input type="text" name="consumername" required 
+                          placeholder="Enter Customer name here" 
+                          pattern="[A-Z][a-zA-Z]{3,}"/>
+ 
+                                          
+                      </td>
+               </tr>
+ 
+        
+               <tr>
+                   <th>Email Address:</th>
+                      <td>
+                         <input type="email" name="email"  required/>               
+                      </td>
+               </tr> 
+ 
+    
+               <tr>
+                   <th>Number of Units:</th>
+                      <td>
+                         <input type="number" name="unit" required  pattern="[0-9]+" min="0"/>
+                      </td>
+               </tr>
+
+        
+               <tr >
+                    <td colspan=2 style="text-align:center">
+                        <input type="submit" value="Calculate Electricity Charges and Display"/>
+                    </td>
+               </tr>
+
+             </table>
+
+         </form> 
+        
+     </body>
+
+</html>
